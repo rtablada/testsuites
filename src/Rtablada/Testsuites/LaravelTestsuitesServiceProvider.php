@@ -1,8 +1,8 @@
-<?php namespace Rtablada\LaravelTestsuites;
+<?php namespace Rtablada\Testsuites;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelTestsuitesServiceProvider extends ServiceProvider {
+class TestsuitesServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -18,7 +18,10 @@ class LaravelTestsuitesServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app['testsuites'] = $this->app->share(function($app)
+        {
+            return new TestSuiteCommand(new TestRunner);
+        });
 	}
 
 	/**
@@ -28,7 +31,7 @@ class LaravelTestsuitesServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array();
+		return array('testsuites');
 	}
 
 }

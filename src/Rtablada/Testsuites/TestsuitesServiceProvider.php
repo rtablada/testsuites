@@ -22,6 +22,8 @@ class TestsuitesServiceProvider extends ServiceProvider {
         {
             return new TestSuiteCommand(new TestRunner);
         });
+
+        $this->commands('testsuites');
 	}
 
 	/**

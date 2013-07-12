@@ -1,6 +1,12 @@
 {
     "name": "rtablada/laravel-testsuites",
-    "description": "",
+    "description": "A Laravel 4 helper command for organizing and running phpunit testsuites",
+    "keywords": [
+        "tdd",
+        "laravel",
+        "testing",
+        "lpm"
+    ],
     "authors": [
         {
             "name": "Ryan Tablada",
